@@ -30,7 +30,7 @@ if (!window.MathJax) {window.MathJax= {}}
 if (!MathJax.Hub) {  // skip if already loaded
   
 MathJax.version = "2.0";
-MathJax.fileversion = "2.0.3";
+MathJax.fileversion = "2.0";
 
 /**********************************************************/
 
@@ -642,7 +642,14 @@ MathJax.fileversion = "2.0.3";
     //
     //  Return a complete URL to a file (replacing the root pattern)
     //
-    fileURL: function (file) {return file.replace(this.rootPattern,this.config.root)},
+    fileURL: function (file) {
+        if (this.config.root == "") {
+            // ### fix config: this quick hack ensures proper loading of menu and jax/ext durign dynamic initialization
+            // http://localhost:8080/de.tu-berlin.eduzen/script/vendor/mathjax
+            this.config.root = "http://stable.eduzen.tu-berlin.de:8080/de.tu-berlin.eduzen/script/vendor/mathjax"
+        }
+        return file.replace(this.rootPattern, this.config.root)
+    },
     
     //
     //  Load a file if it hasn't been already.
@@ -1203,7 +1210,7 @@ MathJax.Message = {
   
   File: function (file) {
     var root = MathJax.Ajax.config.root;
-    if (file.substr(0,root.length) === root) {file = "[MathJax]"+file.substr(root.length)}
+    if (file.substr(0,root.length) === root) {file = root+file.substr(root.length)} // ### better debugging
     return this.Set("Loading "+file);
   },
   
@@ -1240,7 +1247,7 @@ MathJax.Hub = {
     skipStartupTypeset: false,    // set to true to skip PreProcess and Process during startup
     "v1.0-compatible": true,  // set to false to prevent message about configuration change
     elements: [],             // array of elements to process when none is given explicitly
-    positionToHash: false,    // after initial typeset pass, position to #hash location?
+    positionToHash: true,     // after initial typeset pass, position to #hash location?
      
     showMathMenu: true,      // attach math context menu to typeset math?
     showMathMenuMSIE: true,  // separtely determine if MSIE should have math menu
@@ -1352,7 +1359,7 @@ MathJax.Hub = {
     if (!renderer) return;
     if (!MathJax.OutputJax[renderer]) {
       this.config.menuSettings.renderer = "";
-      var file = "[MathJax]/jax/output/"+renderer+"/config.js";
+      var file = "[MathJax]/jax/output/"+renderer+"/config.js"; // ### here the file causing issues is set to be "required"
       return MathJax.Ajax.Require(file,["setRenderer",this,renderer,type]);
     } else {
       this.config.menuSettings.renderer = renderer;
@@ -1812,12 +1819,13 @@ MathJax.Hub.Startup = {
   },
   //
   //  Check for v1.0 no-configuration and put up a warning message.
-  //
+  //  ### interesting method regarding our configuration not recognized issue with 
+  //  ### uncomment this, because we load not config file, we use "delayStartupUntil=configured"
   ConfigDefault: function () {
     var CONFIG = MathJax.Hub.config;
-    if (CONFIG["v1.0-compatible"] && (CONFIG.jax||[]).length === 0 &&
-        !this.params.config && (CONFIG.config||[]).length === 0)
-      {return MathJax.Ajax.Require(this.URL("extensions","v1.0-warning.js"))}
+    // if (CONFIG["v1.0-compatible"] && (CONFIG.jax||[]).length === 0 &&
+        // !this.params.config && (CONFIG.config||[]).length === 0)
+      // return {// return MathJax.Ajax.Require(this.URL("extensions","v1.0-warning.js"))}
   },
 
   //
@@ -1862,9 +1870,8 @@ MathJax.Hub.Startup = {
     var config = MathJax.Hub.config, jax = MathJax.Hub.outputJax;
     //  Save the order of the output jax since they are loading asynchronously
     for (var i = 0, m = config.jax.length, k = 0; i < m; i++) {
-      var name = config.jax[i].substr(7);
-      if (config.jax[i].substr(0,7) === "output/" && jax.order[name] == null)
-        {jax.order[name] = k; k++}
+      if (config.jax[i].substr(0,7) === "output/") 
+        {jax.order[config.jax[i].substr(7)] = k; k++}
     }
     var queue = MathJax.Callback.Queue();
     return queue.Push(
@@ -2401,11 +2408,6 @@ MathJax.Hub.Startup = {
           document.write('<?import namespace="m" implementation="#MathPlayer">');
           browser.mpImported = true;
         }
-      } else {
-        //  Adding any namespace avoids a crash in IE9 in IE9-standards mode
-        //  (any reference to document.namespaces before document.readyState is 
-        //   "complete" causes an "unspecified error" to be thrown)
-        document.namespaces.add("mjx_IE_fix","http://www.w3.org/1999/xlink");
       }
     }
   });
