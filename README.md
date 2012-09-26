@@ -6,7 +6,8 @@ To hook up the mathjax-renderer as default renderer for parts of your model you 
 
 Example: To setup this renderer for your model you need to set the 'dm4.webclient.simple_renderer_uri'
 
-'''
+<pre>
+
 {
     "value": "Excercise Object",
     "uri": "tub.eduzen.excercise_object",
@@ -25,7 +26,13 @@ Example: To setup this renderer for your model you need to set the 'dm4.webclien
         }
     ]
 }
-'''
+
+</pre>
+
+# MathJax License
+
+Apache License, Version 2.0, January 2004
+see <https://github.com/mathjax/MathJax/blob/master/LICENSE>
 
 # Changelog
 

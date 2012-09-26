@@ -13,7 +13,7 @@
     <parent>
         <groupId>de.deepamehta</groupId>
         <artifactId>deepamehta-parent</artifactId>
-        <version>2</version>
+        <version>3</version>
         <relativePath>../deepamehta/modules/dm4-parent/pom.xml</relativePath>
     </parent>
 
@@ -21,7 +21,7 @@
         <dependency>                                 <!-- depend on the DeepaMehta core module.     -->
             <groupId>de.deepamehta</groupId>         <!-- Copy this declaration as is.              -->
             <artifactId>deepamehta-core</artifactId> <!-- Just update the version number, if a      -->
-            <version>4.0.12-SNAPSHOT</version>       <!-- newer version of DeepaMehta is available. -->
+            <version>4.0.12</version>       <!-- newer version of DeepaMehta is available. -->
         </dependency>                                <!-- If your plugin has no Java code at all,   -->
     </dependencies>                                  <!-- the dependencies element is not needed.   -->
 
