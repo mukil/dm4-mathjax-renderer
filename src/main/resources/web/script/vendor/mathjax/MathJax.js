@@ -645,9 +645,10 @@ MathJax.fileversion = "2.0";
     fileURL: function (file) {
         if (this.config.root == "") {
             // ### fix config: this quick hack ensures proper loading of menu and jax/ext durign dynamic initialization
-            // http://localhost:8080/de.tu-berlin.eduzen.mathjax-renderer/script/vendor/mathjax
-            this.config.root = "http://stable.eduzen.tu-berlin.de:8080/"
-              + "de.tu-berlin.eduzen.mathjax-renderer/script/vendor/mathjax"
+            // 
+            this.config.root = "http://localhost:8080/de.tu-berlin.eduzen.mathjax-renderer/script/vendor/mathjax"
+            // "http://stable.eduzen.tu-berlin.de:8080/"
+              // + "de.tu-berlin.eduzen.mathjax-renderer/script/vendor/mathjax"
         }
         return file.replace(this.rootPattern, this.config.root)
     },
