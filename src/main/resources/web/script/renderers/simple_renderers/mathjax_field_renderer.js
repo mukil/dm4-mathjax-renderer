@@ -17,8 +17,8 @@ dm4c.add_simple_renderer('tub.eduzen.mathjax_field_renderer', {
         },
 
     render_form: function(model, $parent) {
-        var elementInputId = 'math-input-' + model.topic.id
-        var elementOutputId = 'math-output-' + model.topic.id
+        var elementInputId = 'math-input-' + model.object.id
+        var elementOutputId = 'math-output-' + model.object.id
         var $content = $('<textarea id="' + elementInputId +
             '" type="text" rows="4">').attr({ value : model.value, size : 80 })
 
