@@ -1,10 +1,15 @@
 # Simple MathJax Renderer for the DeepaMehta4 Webclient
 
-This simple mathjax-renderer is used as part of the <http://github.com/mukil/dm4.eduzen>-application and just provides the necessary mathjax files for your dm4-webclient plugin to take on, as well as it defines a simple renderer. How this works for me, I`ve written here <https://github.com/mukil/dm4.eduzen/blob/master/src/main/resources/web/script/plugin.js>.
+This simple mathjax-renderer is used as part of the <http://github.com/mukil/dm4.eduzen>-application and provides the necessary mathjax files for your dm4-webclient plugin. It provides this by means of a "simple renderer". How this works for me as a developer, I`ve noted down here <https://github.com/mukil/dm4.eduzen/blob/master/src/main/resources/web/script/plugin.js>.
 
-To hook up the mathjax-renderer as default renderer for parts of your model you have to use the 'tub.eduzen.mathjax_field_renderer'-uri. One can have multiple instances of this renderer in use on one _page_. 
+# Install the MathJax Renderer as a user ("admin")
 
-Example: To setup this renderer for your model you need to set the 'dm4.webclient.simple_renderer_uri'
+To **use** the mathjax-renderer, you need to set it up as the default renderer for a TopicType. Choose a TopicType, reveal it's related 'ViewConfig'-Topic and set it's 'Simple renderer' option to the renderer uri 'tub.eduzen.mathjax_field_renderer'. Press 'Save' and that's it. You can now view and edit TeX-commands through creating and editing the resp. TopicType in your dm4-webclient.
+
+
+# Install MathJax Renderer as a developer 
+
+Example: To setup this renderer as part of your model/migration you need to set the 'dm4.webclient.simple_renderer_uri'. In a declarative model migration this could look like the following:
 
 <pre>
 
@@ -35,6 +40,10 @@ Apache License, Version 2.0, January 2004
 see <https://github.com/mathjax/MathJax/blob/master/LICENSE>
 
 # Changelog
+
+0.1.0 Nov 25, 2012
+
+- Minor code changes and removed logging to 'console
 
 0.1.0-SNAPSHOT, Sep 25, 2012:
 

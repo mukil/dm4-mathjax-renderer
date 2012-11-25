@@ -29,7 +29,7 @@ dm4c.add_plugin("de.tu-berlin.eduzen.mathjax-renderer", function() {
         // ### the workaround to load all important mathjax stuff, except the one file commented above^^
         MathJax.Ajax.config.root = "http://localhost:8080/de.tu-berlin.eduzen.mathjax-renderer/script/vendor/mathjax"
         // MathJax.Ajax.config.root = "http://stable.eduzen.tu-berlin.de:8080/de.tu-berlin.eduzen.mathjax-renderer/script/vendor/mathjax"
-        console.log("   > new MathJax.Ajax.config.root => " + MathJax.Ajax.config.root) // ff does not know w.l.origin
+        // console.log("   > new MathJax.Ajax.config.root => " + MathJax.Ajax.config.root) // ff does not know w.l.origin
         MathJax.Hub.Config({
             "extensions": ["tex2jax.js", "mml2jax.js", "MathEvents.js", "MathZoom.js", "MathMenu.js", "toMathML.js",
                "TeX/noErrors.js","TeX/noUndefined.js","TeX/AMSmath.js","TeX/AMSsymbols.js", "FontWarnings.js"],
@@ -54,8 +54,8 @@ dm4c.add_plugin("de.tu-berlin.eduzen.mathjax-renderer", function() {
             var script = MathJax.Hub.getJaxFor(message[1]).SourceElement()
             if (console != undefined) console.log(message.join(" ")+": '"+script.text+"'")
         }) **/
-        console.log("EduZEN.configuredMathJax().. for further investigation, check out MathJax-object next line.")
-        console.log(MathJax) // is here to learn more about mathjax
+        // console.log("EduZEN.configuredMathJax().. for further investigation, check out MathJax-object next line.")
+        // console.log(MathJax) // is here to learn more about mathjax
         // fixme: hide "Create Topic Type" menu item
     })
 
