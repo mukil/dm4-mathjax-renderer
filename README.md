@@ -4,7 +4,7 @@ This simple mathjax-renderer is used as part of the <http://github.com/mukil/dm4
 
 # Install the MathJax Renderer
 
-Download the Mathjax Renderer Bundle 0.1.0.
+Download the Mathjax Renderer Bundle 0.1.0. A [download is provided here](https://github.com/downloads/mukil/dm4-mathjax-renderer/mathjax-renderer-0.1.0.jar).
 
 Place the downloaded file `mathjax-renderer-0.1.0.jar` in the `bundles`-folder of your deepamehta installation and restart DeepaMehta.
 
@@ -59,6 +59,10 @@ Apache License, Version 2.0, January 2004
 see <https://github.com/mathjax/MathJax/blob/master/LICENSE>
 
 # Changelog
+
+0.1.0 Dec 3, 2012
+
+- Updated readme and installation hints, uploaded binary release
 
 0.1.0 Nov 25, 2012
 
