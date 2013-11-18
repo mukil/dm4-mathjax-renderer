@@ -29,8 +29,8 @@ dm4c.add_simple_renderer('tub.eduzen.mathjax_field_renderer', {
             + '</div>'
         $parent.append(html)
 
-	$outputArea = $('#' + elementOutputId)
-	$inputArea = $('#' + elementInputId)
+        $outputArea = $('#' + elementOutputId)
+        $inputArea = $('#' + elementInputId)
         // register keyup-handler on math-input textarea and update the output-area on keyinput
         $inputArea.keyup(function () {
             $outputArea.text($inputArea.val())
