@@ -17,4 +17,4 @@ MathJax.Hub.Config({
   jax: ["input/TeX","output/HTML-CSS"]
 });
 
-MathJax.Ajax.loadComplete("/de.tu-berlin.eduzen/script/vendor/mathjax/config/TeX-AMS_HTML-full.js");
+MathJax.Ajax.loadComplete("/de.tu-berlin.eduzen.mathjax-renderer/script/vendor/mathjax/config/TeX-AMS_HTML-full.js");

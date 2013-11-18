@@ -26,4 +26,4 @@ MathJax.Hub.Config({
   }
 });
 
-MathJax.Ajax.loadComplete("/de.tu-berlin.eduzen/script/vendor/mathjax/config/Accessible-full.js");
+MathJax.Ajax.loadComplete("/de.tu-berlin.eduzen.mathjax-renderer/script/vendor/mathjax/config/Accessible-full.js");
