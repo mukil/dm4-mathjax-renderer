@@ -1,18 +1,16 @@
-# MathJaxRenderer for DeepaMehta 4
+# DeepaMehta 4 MathJax Renderer
 
-With this MathJaxRenderer you can enrich your DeepaMehta content with high-quality rendered mathematical formulas (and possibly more). Rendering is based on [MathJax 2.0](http://docs.mathjax.org/en/v2.0-latest/) and takes place in DeepaMehta's Page Panel.
+With this plugin you can enrich your DeepaMehta content with high-quality rendered mathematical formulas (and possibly more). Rendering is based on [MathJax 2.0](http://docs.mathjax.org/en/v2.0-latest/) and takes place in DeepaMehta's Page Panel.
 
-It provides this by means of a "Simple renderer" . How this setup works for me as a plugin developer, I`ve noted down here <https://github.com/mukil/dm4.eduzen/blob/master/src/main/resources/web/script/plugin.js>. Users can follow the installation, configuration and usage description on this page.
+# Install the DeepaMehta 4 MathJax Renderer
 
-# Install the MathJaxRenderer for DeepaMehta 4
+Download the DeepaMehta 4 MathJax Renderer Bundle, latest in version 1.0.2 (compatible with DeepaMehta 4.1.2) [here](http://download.deepamehta.de/nightly/mathjax-renderer-1.0.2.jar) or find it on our [downloads page](http://download.deepamehta.de/nightly/).
 
-Download the MathjaxRenderer Bundle 0.1.0. A [download is provided here](https://github.com/downloads/mukil/dm4-mathjax-renderer/mathjax-renderer-0.1.0.jar) in this repository, also filed under `Downloads`.
+After that place the downloaded file `mathjax-renderer-1.0.2.jar` in the `bundles`-folder of your deepamehta installation and restart DeepaMehta.
 
-Place the downloaded file `mathjax-renderer-0.1.0.jar` in the `bundles`-folder of your deepamehta installation and restart DeepaMehta.
+# Configure the DeepaMehta 4 MathJax Renderer interactively
 
-# Configure the MathJaxRenderer for DeepaMehta 4 interactively
-
-To start **using** the mathjax-renderer you need to set it up as the `simple default renderer` for a TopicType first. Here is described how you can do so (this document is based on deepamehta-4.0.13):
+To start **using** the mathjax-renderer you need to set it up as the `simple default renderer` for a TopicType first. Here is described how you can do so with creating a complete new 'Topic Type' from scratch, but alternatively you can set up this renderer in any 'View Configuration' of (nearly) any existing 'Topic Type' of your choice:
 
 Create a new TopicType via the `Create`-Menu and choosing `New Topic Type`. In the upcoming edit form give your new _TopicType_ a proper name, e.g. _MathJax Content_ and make sure it's either of _Data Type_ `Text` or `HTML`. Save your input, e.g. through pressing the `Ok`-Button at the bottom of the _Page Panel_ in DeepaMehta.
 
@@ -66,7 +64,12 @@ see also <https://github.com/mathjax/MathJax/blob/master/LICENSE>
 
 # Changelog
 
-0.1.0 Dec 3, 2012
+1.0.2, Nov 18, 2013
+
+- compatible with DeepaMehta 4.1.2
+- updated to output formulas in SVG
+
+0.1.0, Dec 3, 2012
 
 - Updated readme and installation hints, uploaded binary release
 
@@ -79,4 +82,5 @@ see also <https://github.com/mathjax/MathJax/blob/master/LICENSE>
 - TeX based info_renderer <http://www.mathjax.org> introduced to  'dm4.webclient'
 - TeX based form_renderer <http://www.mathjax.org> introduced to  'dm4.webclient'
 
-Copyright 2012, Malte Reißig
+Author: Malte Reißig
+
