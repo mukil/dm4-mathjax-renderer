@@ -1,3 +1,4 @@
+
 # DeepaMehta 4 MathJax Renderer
 
 With this plugin you can enrich your DeepaMehta content with high-quality rendered mathematical formulas (and possibly more). Rendering is based on [MathJax 2.0](http://docs.mathjax.org/en/v2.0-latest/) and takes place in DeepaMehta's Page Panel.
@@ -64,21 +65,24 @@ see also <https://github.com/mathjax/MathJax/blob/master/LICENSE>
 
 # Changelog
 
-1.0.2, Nov 18, 2013
+UPCOMING: 1.0.5
+- make formulas work with the new Box Renderer (in-map formulas)
+- upgrade to the latest MathJax version
 
+1.0.4, Mar 08, 2014
+- compatible with DeepaMehta 4.2
+
+1.0.2, Nov 18, 2013
 - compatible with DeepaMehta 4.1.2
 - updated to output formulas in SVG
 
 0.1.0, Dec 3, 2012
-
 - Updated readme and installation hints, uploaded binary release
 
 0.1.0-SNAPSHOT, Nov 25, 2012
-
 - Minor code changes and removed logging to 'console
 
 0.1.0-SNAPSHOT, Sep 25, 2012:
-
 - TeX based info_renderer <http://www.mathjax.org> introduced to  'dm4.webclient'
 - TeX based form_renderer <http://www.mathjax.org> introduced to  'dm4.webclient'
 
