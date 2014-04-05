@@ -20,7 +20,7 @@ dm4c.add_simple_renderer('tub.eduzen.mathjax_field_renderer', {
         var elementInputId = 'math-input-' + model.object.id
         var elementOutputId = 'math-output-' + model.object.id
         var $content = $('<textarea id="' + elementInputId +
-            '" type="text" rows="4">').attr({ value : model.value, size : 80 })
+            '" type="text" rows="4">').attr({ size : 80 }).val(model.object.value)
 
         $parent.append($content)
         dm4c.render.field_label("Preview", $parent)
