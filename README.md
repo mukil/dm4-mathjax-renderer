@@ -1,23 +1,25 @@
 
 # DeepaMehta 4 MathJax Renderer
 
-With this plugin you can enrich your DeepaMehta content with high-quality rendered mathematical formulas (and possibly more). Rendering is based on [MathJax 2.0](http://docs.mathjax.org/en/v2.0-latest/) and takes place in DeepaMehta's Page Panel.
+With this plugin you can write mathematical formulas (and possibly more) within DeepaMehta. Rendering is based on [MathJax 2.0](http://docs.mathjax.org/en/v2.0-latest/) but currently limited to DeepaMehta's Page Panel and Mozilla Firefox.
 
 ## Download and Installation
 
 Find and download your DeepaMehta 4 MathJax Renderer bundle version file from the following [page](http://download.deepamehta.de/nightly/).
 
-After that place the downloaded file `mathjax-renderer-1.0.X.jar` in the `bundles`-folder of your deepamehta installation and restart DeepaMehta.
+After that place the downloaded file `dm44-mathjax-renderer-1.0.X.jar` in the `bundles`-folder of your DeepaMehta installation and restart DeepaMehta.
 
 ## Configure the DeepaMehta 4 MathJax Renderer interactively
 
-To start **using** the mathjax-renderer you need to set it up as the `simple default renderer` for a TopicType first. Here is described how you can do so with creating a complete new 'Topic Type' from scratch, but alternatively you can set up this renderer in any 'View Configuration' of (nearly) any existing 'Topic Type' of your choice:
+To start **using** the mathjax-renderer you need to set it up as the `simple default renderer` for a TopicType first. 
+
+Here is described how you can do so for a new _Topic Type_. Alternatively you can set up this renderer through editing the _View Config_ of (nearly) any existing 'Topic Type' in DeepaMehta 4.
 
 Create a new TopicType via the `Create`-Menu and choosing `New Topic Type`. In the upcoming edit form give your new _TopicType_ a proper name, e.g. _MathJax Content_ and make sure it's either of _Data Type_ `Text` or `HTML`. Save your input, e.g. through pressing the `Ok`-Button at the bottom of the _Page Panel_ in DeepaMehta.
 
 After being saved the _Page Panel_ is updated immediately to show you the infos about your newly created Topic Type, among these infos are also _all_ its associated items (=topics). From among these associated topics, choose the _aggregated_ `View Config`-Topic of your new _Topic Type_ `MathJax Content`. Through clicking, this topic get's revealed in your current working map (left side of the DeepaMehta screen). When the _View Config_ of your _MathJax Content_-Type Topic is selected, you can now press `Edit`  in the _Page Panel_ and thus configure it to make use of the DeepaMehta MathJax Renderer.
 
-On the _Edit_-Page of the _View Config_-Topic  set it's `Simple renderer` option to the renderer uri `tub.eduzen.mathjax_field_renderer`. Make also sure your new _Topic Type_ is set to be `Editable`, `Viewable`and possibly part of your search results through being a `Is Searchable Unit`. Save your data, e.g. through pressing the `Ok`-button or clicking anywhere else in your browser window and that's it. You can now view and edit LaTeX-commands through creating and editing the resp. TopicType (here: `MathJax Content`) in your dm4-webclient. 
+On the _Edit_-Page of the _View Config_-Topic  set it's _Simple renderer_ option to the renderer uri `tub.eduzen.mathjax_field_renderer`. Make also sure your new _Topic Type_ is set to be `Editable`, `Viewable`and possibly part of your search results through being a `Is Searchable Unit`. Save your data, e.g. through pressing the `Ok`-button or clicking anywhere else in your browser window and that's it. You can now view and edit LaTeX-commands through creating and editing the resp. TopicType (here: `MathJax Content`) in your dm4-webclient. 
 
 ## Install MathJax Renderer as a developer 
 
@@ -33,7 +35,7 @@ Example: To setup this renderer as part of your model/migration you need to set 
     "view_config_topics": [
         {
             "type_uri": "dm4.webclient.view_config",
-            "composite": {
+            "childs": {
                 "dm4.webclient.simple_renderer_uri": "tub.eduzen.mathjax_field_renderer",
                 "dm4.webclient.icon": "/de.tu-berlin.eduzen/images/ball-yellow.png",
                 "dm4.webclient.add_to_create_menu": true,
@@ -67,9 +69,8 @@ see also <https://github.com/mathjax/MathJax/blob/master/LICENSE>
 
 ## Version History
 
-UPCOMING: **1.0.5**
-- make formulas work with the new Box Renderer (in-map formulas)
-- upgrade to the latest MathJax version
+**1.0.5**, Dec 08, 2015
+- compatible with DeepaMehta 4.4
 
 **1.0.4**, Mar 08, 2014
 - compatible with DeepaMehta 4.2
@@ -82,7 +83,7 @@ UPCOMING: **1.0.5**
 - Updated readme and installation hints, uploaded binary release
 - Minor code changes and removed logging to 'console
 
-0.1.0-SNAPSHOT, Sep 25, 2012:
+**0.1.0-SNAPSHOT**, Sep 25, 2012:
 - TeX based info_renderer <http://www.mathjax.org> introduced to  'dm4.webclient'
 - TeX based form_renderer <http://www.mathjax.org> introduced to  'dm4.webclient'
 
